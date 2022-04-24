@@ -15,7 +15,6 @@
 #include <TimeLib.h>
 #include <PubSubClient.h>
 
-
 // Definittions //
 
 #define SerialMon Serial
