@@ -42,9 +42,9 @@ Sleep slp;
 
 // Device Details // 
 
-const char ID[] = "ST101";
-const char statReq[] = "{\"id\":\"ST101\", \"req\":1}";
-const char setReq[] = "{\"id\":\"ST101\", \"req\":2}";
+const char ID[] = "KTR101";
+const char statReq[] = "{\"id\":\"KTR101\", \"req\":1}";
+const char setReq[] = "{\"id\":\"KTR101\", \"req\":2}";
 
 // GPS Control Variables //
 
@@ -443,6 +443,7 @@ void setup() {
   pinMode(FPIN, OUTPUT);
   pinMode(IPIN, OUTPUT);
 
+  Serial.print(F("ID :")); Serial.println(ID);
   Serial.println(F("INITIALIZING"));
   digitalWrite(IPIN, HIGH);
   delay(5000);
