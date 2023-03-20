@@ -42,9 +42,9 @@ Sleep slp;
 
 // Device Details // 
 
-const char ID[] = "KTR101";
-const char statReq[] = "{\"id\":\"KTR101\", \"req\":1}";
-const char setReq[] = "{\"id\":\"KTR101\", \"req\":2}";
+const char ID[] = "ST102";
+const char statReq[] = "{\"id\":\"ST102\", \"req\":1}";
+const char setReq[] = "{\"id\":\"ST102\", \"req\":2}";
 
 // GPS Control Variables //
 
@@ -70,7 +70,7 @@ const char gprsUser[] = "";
 const char gprsPass[] = "";
 
 // MQTT details ///
-const char* broker = "13.233.227.254";
+const char* broker = "65.1.242.158";
 
 const char* telemetryTopic = "telemetry";
 const char* statusSubTopic = "status";
@@ -502,6 +502,12 @@ void setup() {
         } 
   }
   
+  if (mqtt.connected())
+  {
+    Serial.println(F("Transmitting"));
+    postMetaAttributes();
+  }
+
   Btime = 0;
   while (Btime <= 5000)
   {
